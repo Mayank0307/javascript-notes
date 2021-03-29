@@ -55,7 +55,7 @@ Semicolons used to end a statement. You can choose to not write them *(because t
     
 
 
-## Types:
+### Types:
 1. String
 2. Number
 3. Object
@@ -65,3 +65,102 @@ Semicolons used to end a statement. You can choose to not write them *(because t
 7. Null
 
 Everything except Object is Primitive type, Object is special one.
+
+
+### Strings:
+- used for holding text
+- 3 ways to create strings:
+    1. using single quotes:
+
+        `const first = 'Soumya';`
+
+    2. using double quotes:
+
+        `const middle = "Ranjan";`
+
+    3. using backticks:
+
+        ```jsx
+        	const last = `Mohanty`;
+        ```
+
+- single quotes and double quotes are the same thing.
+
+    used for: `"she's cool"` 
+
+    or escaping: `'she\'s cool'`
+
+- backticks:
+
+    ```jsx
+    const sentence = `she's so "cool"`;
+    console.log(sentence); // she's so "cool"
+    ```
+
+- Multi-line string:
+
+    1.
+
+    ```jsx
+    const song = 'Oh \
+    I like \
+    pizza';
+
+    console.log(song); // Oh I like pizza
+    ```
+
+    2.
+
+    ```jsx
+    const song = `Oh
+    I like
+    pizza`;
+
+    console.log(song); 
+    /*
+    Oh
+    I like
+    pizza
+    */
+    ```
+
+    2nd one using backticks is mostly used.
+
+- **String concatenation and interpolation**
+    - '+' is used for **concatenation**. It is also used for adding 2 nos.
+    - **Concatenation**: when 2 or more strings combined to one
+    - **Interpolation**: when you put a variable inside a string
+    - Example 1:
+
+    `const name = 'Soumya';`
+
+    `const hello = 'Hello my name is ' + name + '. Nice to meet you.'`
+
+    *(can use double or single quotes)*
+
+    - Example 2:
+
+    ```jsx
+    1+1 // 2
+    '1'+'1' // 11
+    1 + '1' // 11
+    ```
+
+    - Example 3:
+
+    ```jsx
+    const name = 'Soumya';
+    const hello = `Hello my name is ${name}. Nice to meet you. I am ${100+1} years old.`;
+    console.log(hello); // Hello my name is Soumya. Nice to meet you. I am 101 years old.
+    ```
+
+    - Backticks also used for *tagged template literals*.
+    - Backticks are helpful for creating HTML:
+
+        ```jsx
+        const html = `
+        	<div>
+        		<h2>Hey everyone! I am ${name}.</h2>
+        	</div>
+        `;
+        ```
