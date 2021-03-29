@@ -1,4 +1,6 @@
 # javascript-notes
+
+## Variables and Statements:
 Semicolons used to end a statement. You can choose to not write them *(because there is ASI: Automatic Semicolon Insertion in Javascript)*.
 
 ### Declaring a variable:
@@ -50,3 +52,16 @@ Semicolons used to end a statement. You can choose to not write them *(because t
         - *Camel-case:* `let iLovePizza = true;`
         - *Upper Camel case (in case of classes):* `ILovePizza`
         - *Snake case: `let i_love_pizza=true;`*
+    
+
+
+## Types:
+1. String
+2. Number
+3. Object
+4. Boolean
+5. Undefined
+6. Symbol : Always gives a guaranteed unique identifier
+7. Null
+
+Everything except Object is Primitive type, Object is special one.
