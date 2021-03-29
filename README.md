@@ -3,13 +3,13 @@ Semicolons used to end a statement. You can choose to not write them *(because t
 
 ### Declaring a variable:
 
-`var**first** = 'Soumya';` 
+`var **first** = 'Mayank';` 
 
-`let**first** = 'Soumya';`
+`let **first** = 'Mayank';`
 
-`const**first** = 'Soumya';`
+`const **first** = 'Mayank';`
 
-(here value is 'Soumya')
+(here value is 'Mayank')
 
 - `let` and `const` were introduced in ES6 (newer).
 - `var` and `let` can be updated but not `const`.
