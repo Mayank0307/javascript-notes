@@ -126,8 +126,9 @@ Everything except Object is Primitive type, Object is special one.
 
     2nd one using backticks is mostly used.
     
-    
-    ### Numbers:
+   
+ 
+ ### Numbers:
     Only **one** type of number in JavaScript whether it has decimal point or not.
 
 ```jsx
