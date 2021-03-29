@@ -125,42 +125,150 @@ Everything except Object is Primitive type, Object is special one.
     ```
 
     2nd one using backticks is mostly used.
+    
+    
+    ### Numbers:
+    Only **one** type of number in JavaScript whether it has decimal point or not.
 
-- **String concatenation and interpolation**
-    - '+' is used for **concatenation**. It is also used for adding 2 nos.
-    - **Concatenation**: when 2 or more strings combined to one
-    - **Interpolation**: when you put a variable inside a string
-    - Example 1:
+```jsx
+const age = 100;
+const money = 1000.50
+console.log(typeof age); // number
+console.log(typeof money); // number
+```
 
-    `const name = 'Soumya';`
+- `typeof` is used to find out the 'type' of a variable.
+- Various operations: addition, subtraction, multiplication, division can be done with nos.
+- Example
 
-    `const hello = 'Hello my name is ' + name + '. Nice to meet you.'`
+```jsx
+"10" * "10" // 100 (number) - converts the strings to number
+```
 
-    *(can use double or single quotes)*
+The above works with *multiplication, division and subtraction and not addition,* because the + sign is also used for concatenation.
 
-    - Example 2:
-
-    ```jsx
-    1+1 // 2
-    '1'+'1' // 11
-    1 + '1' // 11
-    ```
-
-    - Example 3:
-
-    ```jsx
-    const name = 'Soumya';
-    const hello = `Hello my name is ${name}. Nice to meet you. I am ${100+1} years old.`;
-    console.log(hello); // Hello my name is Soumya. Nice to meet you. I am 101 years old.
-    ```
-
-    - Backticks also used for *tagged template literals*.
-    - Backticks are helpful for creating HTML:
+- **Math helper methods:**
+    - **Math.round, Math.floor, Math.ceil, Math.random** and many others
 
         ```jsx
-        const html = `
-        	<div>
-        		<h2>Hey everyone! I am ${name}.</h2>
-        	</div>
-        `;
+        Math.round(2.5); // 3
+        Math.floor(2.4); // 2
+        Math.ceil(2.4); // 3
+        Math.random(); // 0.565262543048269 - random no. between 0 and 1
         ```
+
+- **Modulo and Power operators:**
+
+    ```jsx
+    const smarties = 20;
+    const kids = 3;
+    const eachKidGets = Math.floor(smarties/kids); // 6
+    const leftSmarties = smarties % kids; // 2 - modulo operation
+
+    const x = 2 ** 3; // 8 - power operation using power operator (**)
+    // or
+    const x = Math.pow(2,3); // 8 - power operation using Math.pow
+    ```
+
+- Example
+
+```jsx
+0.1 + 0.2 // 0.30000000000000004
+```
+
+Why? [Explanation](http://0.30000000000000004.com/)
+
+So, when working with money, don't store them as dollars and cents. Store all of the money in cents  as you won't have to deal with fractions only whole nos. When need to display to user, just convert them back.
+
+- **Infinity and Negative Infinity:**
+
+ `typeof Infinity; // number`
+
+ `typeof -Infinity; // number`
+
+- **Not a Number (NaN):**
+
+`10 / 'dog' // NaN`
+
+`typeof NaN // number`
+
+
+### Objects:
+- Everything in JavaScript is an Object.
+- Objects are used for collection of data, collection of functionality.
+- Example:
+
+    ```jsx
+    const person = {
+    	name: 'Soumya', // property: value
+    	age: 100
+    };
+
+    typeof person // object
+
+    person.age = 101;
+    console.log(person.age); // 101
+    ```
+
+
+### Null and Undefined:
+- Order of properties doesn't matter in an object.
+- **Accessing properties:**
+    - `person.name // Soumya` (dot notation)
+
+
+
+- Used to express 'nothing' in JavaScript.
+- If we declare a variable, and don't set anything to it, then it has value `undefined`.
+
+    ```jsx
+    let dog;
+    console.log(dog); // undefined
+    ```
+
+    When we try to access a variable that is created but not defined/set a value, we get `undefined`.
+
+- **null:** value of nothing
+
+    ```jsx
+    const somethingNull = null;
+    // we have explicitly set the value to be nothing with null
+    ```
+    
+    
+    ### Booleans and Equality:
+    - A **boolean** variable can be either `true` or `false` .
+- Example:
+
+    ```jsx
+    const age = 18;
+    const ofAge = age > 18;
+    console.log(ofAge); // false
+    ```
+
+- **Equal signs:**
+    - `=` sign: used for assignment/ updation of values
+
+        ```jsx
+        let name = 'Soumya';
+        name = 'Raja';
+        ```
+
+    - Out of `==` and `===`, you should **almost always** use `===`.
+    - `==` and `===` are used for equality comparison.
+
+        ```jsx
+        console.log(age === 18); // true
+        ```
+
+    - `==` vs `===` :
+
+        `===` checks both **type & value.**
+
+        `==` only checks **value.**
+
+        ```jsx
+        10 === "10" // false as values are same but types are not
+        10 == "10" // true as values are same
+        ```
+    
