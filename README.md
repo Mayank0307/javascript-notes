@@ -1,4 +1,5 @@
-# javascript-notes
+# JavaScript-Notes
+
 
 ## Variables and Statements:
 Semicolons used to end a statement. You can choose to not write them *(because there is ASI: Automatic Semicolon Insertion in Javascript)*.
@@ -55,7 +56,7 @@ Semicolons used to end a statement. You can choose to not write them *(because t
     
 
 
-### Types:
+## Types:
 1. String
 2. Number
 3. Object
@@ -273,3 +274,164 @@ So, when working with money, don't store them as dollars and cents. Store all of
         10 == "10" // true as values are same
         ```
     
+## Functions:
+### Built in:
+
+- Function allows us to *group together multiple statements,* take in some values, perform some operations and return some value.
+- Functions take in data known as *arguments.*
+- Function may or may not *return* a value.
+- Example:
+
+    ```jsx
+    Math.max(10, 12); // 12
+    ```
+
+- There are many in-built JavaScript functions.
+
+    e.g: 
+
+    - `console.log('hey');` returns `undefined` , logs `hey`.
+    - `parseFloat('2.032565') // 2.032565` (converts string to number)
+    - `parseInt('2.032565') // 2` (converts string to number as integer)
+    - Many date functions are also present. e.g. `Date.now()` returns no. of milliseconds since January 1, 1970 00:00:00 UTC.
+    - DOM functions:
+        - Example:
+
+            ```jsx
+            <body>
+            <p>Hey How ya doin?</p>
+            	<script>
+            		const para = document.querySelector('p'); // finds p tag in page
+            		console.log(para); // <p>Hey How ya doin?</p>
+            	</script>
+            </body>
+
+            ```
+
+        - Mobile only functions e.g. `navigator.vibrate()`
+
+- Other Examples:
+
+    ```jsx
+    scrollTo(0, 200); // scrolls to (x, y) position in page
+
+    scrollTo({
+    	top: 500,
+    	left: 0,
+    	behavior: 'smooth'
+    }); // scrolls to position top: 500, left: 0 in a 'smooth' manner
+    ```
+
+    The `scrollTo` function returns `undefined`.
+    
+    ### Custom:
+    
+    - Functions are **created/ defined** then they are **called**.
+- Defining a function:
+
+    ```jsx
+    // Function definition
+
+    function calculateBill() {
+    	// this is the function body
+    	console.log('running calculateBill');
+    }
+    ```
+
+- Calling a function:
+
+    ```jsx
+    // Function call or run
+
+    calculateBill(); // running calculateBill (returns undefined)
+    ```
+
+- Variables created inside a function are not available outside the function. e.g. `total` above.
+
+    It is a **temporary variable.** After running of the function is complete, the variable is cleaned up or garbage-collected.
+
+- **Returning value from function:**
+
+    ```jsx
+    function calculateBill() {
+    	const total = 100 * 1.13;
+    	return total; // total is returned
+    }
+
+    calculateBill(); // returns 112.999999999
+    ```
+
+- Capturing returned value from a function into a variable:
+
+    `const myTotal = calculateBill();`  (myTotal will have value 112.999999999)
+    
+    ### Arguments & Parameters:
+    
+    - Parameters are like *placeholders* for data that will be passed to a function.
+- Arguments are the actual values passed to a function while calling it
+
+```jsx
+function calculateBill(billAmount, taxRate) { // here billAmount, taxRate are parameters
+  const total = billAmount + billAmount * taxRate 
+  return total;
+}
+
+calculateBill(100, 0.13); // here 100, 0.13 are arguments
+```
+
+![https://res.cloudinary.com/geekysrm/image/upload/v1576699296/parameters-arguments.jpg](https://res.cloudinary.com/geekysrm/image/upload/v1576699296/parameters-arguments.jpg)
+
+- Parameters are variables local to the function; available only inside the function.
+- You can also pass variables as arguments during a function call.
+- We can also pass *expressions* as arguments to a function.
+
+    ```jsx
+    myTotal3 = calculateBill(20+20+30, 0.3);
+    ```
+
+- So, we can either pass direct value or variables holding value or expressions resulting in a value to a function as arguments.
+- **Passing functions as arguments:**
+
+    ```jsx
+    function doctorize (name) { 
+    	return `Dr. ${name}`;
+    }
+
+    function yell (name) {
+    	return `HEY ${name.toUpperCase()}`;
+    }
+
+    // We can pass a function inside another
+    yell(doctorize('Soumya')); // HEY DR. SOUMYA
+    // Above, returned value of doctorize function is passed to yell function
+    ```
+
+    - Default values:
+
+        ```jsx
+        function yell (name = 'Silly Goose') {
+        	return `HEY ${name.toUpperCase()}`;
+        }
+
+        yell('Soumya') // HEY SOUMYA
+        yell() // HEY SILLY GOOSE
+
+        // Above, if we don't pass any argument to yell function, then it takes the default value in function definition,
+        // here Silly Goose, else it takes whatever we pass as argument.
+        ```
+
+    - **Important gotcha:**
+
+        ```jsx
+        function calculateBill(billAmount, taxRate = 0.13, tipRate = 0.15) {
+          console.log('Running Calculate Bill!!');
+          const total = billAmount + billAmount * taxRate + billAmount * tipRate;
+          return total;
+        }
+
+        // Suppose above, we want to pass the tipRate but not the taxRate and want taxRate to be default,
+        // then the only thing we can do is:
+         
+        calculateBill(100, undefined, 0.66); // here the taxRate will default to 0.13 as 
+        // we have passed undefined to it and the tipRate will be 0.66 as passed
+        ```
