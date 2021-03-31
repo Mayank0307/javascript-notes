@@ -562,3 +562,8 @@ calculateBill(100, 0.13); // here 100, 0.13 are arguments
     }, 1000);
     // it runs the console.log after each 1 sec or 1000 milliseconds
     ```
+
+## The DOM - Working with HTML and CSS:
+
+### Selecting Elements:
+![Capture](https://user-images.githubusercontent.com/52233220/113087637-b25d1780-9201-11eb-921f-12014d7a20a6.PNG)
