@@ -567,3 +567,48 @@ calculateBill(100, 0.13); // here 100, 0.13 are arguments
 
 ### Selecting Elements:
 ![Capture](https://user-images.githubusercontent.com/52233220/113087637-b25d1780-9201-11eb-921f-12014d7a20a6.PNG)
+
+### Elements properties and methods:
+For details about element properties, visit the below link
+https://www.w3schools.com/jsref/dom_obj_all.asp
+
+### Nodes properties and methods:
+For details about node properties, visit the below link
+https://developer.mozilla.org/en-US/docs/Web/API/Node
+
+
+## Events:
+Events are actions that happen in the webpage like clicking a button or submit the form. If the user selects a button on a webpage, we might want to respond to that action by displaying an alert on the webpage.
+
+### Event Listener:
+####addEventListener():-
+The JavaScript addEventListener() method allows the programmer to set up functions to be called when a specified event happens, such as when a user clicks a button. The purpose of using the addEventListener() method is to attach an event handler to the specified element.
+Syntax:-
+```jsx
+element.addEventListener(event, function, useCapture);
+```
+### Event bubbling and capturing:
+When an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors.
+
+Let’s say we have 3 nested elements FORM > DIV > P with a handler on each of them:
+
+```jsx
+<style>
+  body * {
+    margin: 10px;
+    border: 1px solid blue;
+  }
+</style>
+
+<form onclick="alert('form')">FORM
+  <div onclick="alert('div')">DIV
+    <p onclick="alert('p')">P</p>
+  </div>
+</form>
+```
+A click on the inner <p> first runs onclick:
+
+- On that <p>.
+- Then on the outer <div>.
+- Then on the outer <form>.
+- And so on upwards till the document object.
