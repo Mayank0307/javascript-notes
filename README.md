@@ -634,4 +634,4 @@ For example, this can be useful when:
 
 ## Loops in JS:
 
-https://code-boxx.com/wp-content/uploads/2019/06/js-loops.jpg![js-loops](https://user-images.githubusercontent.com/52233220/113089958-55179500-9206-11eb-9aa8-8733895462df.jpg)
+![js-loops](https://user-images.githubusercontent.com/52233220/113089958-55179500-9206-11eb-9aa8-8733895462df.jpg)
