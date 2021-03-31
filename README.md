@@ -588,6 +588,8 @@ Syntax:-
 element.addEventListener(event, function, useCapture);
 ```
 ### Event bubbling and capturing:
+
+#### Bubbling:
 When an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors.
 
 Let’s say we have 3 nested elements FORM > DIV > P with a handler on each of them:
@@ -607,8 +609,29 @@ Let’s say we have 3 nested elements FORM > DIV > P with a handler on each of t
 </form>
 ```
 A click on the inner <p> first runs onclick:
+- On that <p>
+- Then on the outer <div>
+- Then on the outer <form>
+- And so on upwards till the document object
 
-- On that <p>.
-- Then on the outer <div>.
-- Then on the outer <form>.
-- And so on upwards till the document object.
+#### Capturing:
+There’s another phase of event processing called “capturing”. It is rarely used in real code, but sometimes can be useful.
+
+The standard DOM Events describes 3 phases of event propagation:
+
+- Capturing phase – the event goes down to the element.
+- Target phase – the event reached the target element.
+- Bubbling phase – the event bubbles up from the element.
+
+### Prevent Default and Form Events:
+
+The preventDefault() method cancels the event if it is cancelable, meaning that the default action that belongs to the event will not occur.
+
+For example, this can be useful when:
+
+- Clicking on a "Submit" button, prevent it from submitting a form
+- Clicking on a link, prevent the link from following the URL
+
+## Loops in JS:
+
+https://code-boxx.com/wp-content/uploads/2019/06/js-loops.jpg![js-loops](https://user-images.githubusercontent.com/52233220/113089958-55179500-9206-11eb-9aa8-8733895462df.jpg)
